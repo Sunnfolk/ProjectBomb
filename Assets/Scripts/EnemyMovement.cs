@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody;
-    [SerializeField] private float moveVector = 1f;
-    
+    [SerializeField] private float moveVectorX = 1f;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -20,7 +20,7 @@ public class TestEnemyMovement : MonoBehaviour
 
     private void MoveEnemy()
     {
-        m_Rigidbody.velocity = new Vector2(moveVector, 0);
+        m_Rigidbody.velocity = new Vector2(moveVectorX, m_Rigidbody.velocity.y);
     }
     
     
