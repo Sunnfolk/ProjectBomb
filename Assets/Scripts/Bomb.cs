@@ -2,35 +2,48 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = Unity.Mathematics.Random;
 
 public class Bomb : MonoBehaviour
 {
 
     private bool canInteract;
+    private bool hasInteractedWithBomb;
     private bool hasInteracted;
     private bool bombWasPlanted;
+    private bool bombCanExplode;
     [HideInInspector] public bool enemiesCanSpawn;
     
 
     [SerializeField] private float bombStartTimer = 5f;
     [SerializeField] private float bombCurrentTimer;
+    [SerializeField] private float explodeStartTimer = 10f;
+    [SerializeField] public float explodeCurrentTimer;
+    [SerializeField] private float bombStartHealth = 3f;
+    [SerializeField] private float bombCurrentHealth;
     
     private PlayerInput m_Input;
     public SpriteRenderer spriteRenderer;
+    private HitDetection m_hitDetection;
     
     
     void Start()
     {
         m_Input = GetComponent<PlayerInput>();
+        m_hitDetection = GetComponent<HitDetection>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
 
         canInteract = false;
         hasInteracted = false;
         bombWasPlanted = false;
         enemiesCanSpawn = false;
+        bombCanExplode = false;
+        
 
         bombCurrentTimer = bombStartTimer;
+        explodeCurrentTimer = explodeStartTimer;
+        bombCurrentHealth = bombStartHealth;
     }
 
     
@@ -44,10 +57,17 @@ public class Bomb : MonoBehaviour
         {
             hasInteracted = false;
         }
+
+        if (m_Input.interact && bombCanExplode)
+        {
+            hasInteractedWithBomb = true;
+        }
         
         PlantBomb();
         BombTimer();
         BombReady();
+        BombExplosion();
+        BombHealth();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,6 +76,20 @@ public class Bomb : MonoBehaviour
         {
             canInteract = true;
             print("Press F to plant the bomb");
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            print("The bombs take damage");
+            bombCurrentHealth--;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);  
         }
     }
 
@@ -91,11 +125,34 @@ public class Bomb : MonoBehaviour
     {
         if (bombCurrentTimer <= 0)
         {
-           print("bomb ready");
+           print("Bomb is ready. Press F to initiate detonation");
            enemiesCanSpawn = false;
+           bombCanExplode = true;
         }
     }
-    
 
+    private void BombExplosion()
+    {
+        if (hasInteractedWithBomb)
+        {
+            explodeCurrentTimer -= Time.deltaTime;
+            print("its going to explode");
+        }
+
+        if (explodeCurrentTimer <= 0 && !m_hitDetection.enteredSafeArea)
+        {
+            print("You have died");
+            SceneManager.LoadScene("GardTestScene"); // need to change the name of the scene when applying this script to different scene
+        }
+    }
+
+    private void BombHealth()
+    {
+        if (bombCurrentHealth <= 0)
+        {
+            print("you have failed");
+            SceneManager.LoadScene("GardTestScene");
+        }
+    }
 
 }
