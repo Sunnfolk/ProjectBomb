@@ -70,11 +70,11 @@ public class EnemySpawner : MonoBehaviour
     
     private void spawnerRight()
     {
-        Instantiate(EnemyRight, new Vector2(17, 3), Quaternion.identity);
+        Instantiate(EnemyRight, new Vector2(40.3f, 2.41f), Quaternion.identity);
     }
 
     private void spawnerLeft()
     {
-        Instantiate(EnemyLeft, new Vector2(-13, 3), Quaternion.identity);  
+        Instantiate(EnemyLeft, new Vector2(-38.6f, 2.41f), Quaternion.identity);  
     }
 }
