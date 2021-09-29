@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // this will automatically add the playerinput script if i add player movement to a game object
@@ -24,16 +21,20 @@ public class TestPlayerMovement : MonoBehaviour
    [SerializeField] private float coyoteTime;
    private float coyoteTimeCounter;
    [HideInInspector] public bool canCoyote;
-   
+   [SerializeField] private float groundDistance = 4f;
+
+   private DashAbility _dash;
    private void Start()
    {
       // must be on the same object for it to be able to access the player input script and the rigidbody2d components
       _Input = GetComponent<PlayerInput>();
       _Rigidbody2D = GetComponent<Rigidbody2D>();
+      _dash = GetComponent<DashAbility>();
    }
 
    private void Update()
    {
+      if (_dash.dashState == DashState.Dashing) return;
       LongJump();
       SetMaxVelocity();
 
@@ -73,6 +74,7 @@ public class TestPlayerMovement : MonoBehaviour
    
    private void FixedUpdate()
    {
+      if (_dash.dashState == DashState.Dashing) return;
       _Rigidbody2D.velocity = new Vector2(_Input.moveVector.x * moveSpeed, _Rigidbody2D.velocity.y);
    }
 
@@ -113,7 +115,7 @@ public class TestPlayerMovement : MonoBehaviour
    public bool IsGrounded()
    {
       Debug.DrawRay(transform.position, Vector2.down, new Color(1f, 0f, 1f));
-      RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f, whatIsGround); //Will only collide with object that is on  the whatIsGrounded
+      RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, whatIsGround); //Will only collide with object that is on  the whatIsGrounded
 
       return hit.collider != null;
    }
