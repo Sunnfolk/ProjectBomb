@@ -7,9 +7,11 @@ using UnityEngine;
 public class HitDetection : MonoBehaviour
 {
     private PlayerInput m_Input;
-    
+
     private bool canhit;
     private bool enemyHit;
+
+    [HideInInspector] public bool enteredSafeArea;
     
     [SerializeField] private float startEnemyHealth = 3f;
     [SerializeField] private float currentEnemyHealth;
@@ -18,9 +20,10 @@ public class HitDetection : MonoBehaviour
     void Start()
     {
         m_Input = GetComponent<PlayerInput>();
-        
+
         canhit = false;
         enemyHit = false;
+        enteredSafeArea = false;
         
         currentEnemyHealth = startEnemyHealth;
     }
@@ -34,11 +37,17 @@ public class HitDetection : MonoBehaviour
         
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             canhit = true;
+        }
+
+        if (other.gameObject.tag == "TPsafeArea")
+        {
+            enteredSafeArea = true;
+            print("you are safe");
         }
     }
 
