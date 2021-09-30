@@ -11,8 +11,8 @@ public class Bomb : MonoBehaviour
     private bool canInteract;
     private bool hasInteractedWithBomb;
     private bool hasInteracted;
-    private bool bombWasPlanted;
     private bool bombCanExplode;
+    [HideInInspector] public bool bombWasPlanted;
     [HideInInspector] public bool enemiesCanSpawn;
     
 

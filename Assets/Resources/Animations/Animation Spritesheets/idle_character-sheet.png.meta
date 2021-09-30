@@ -1,40 +1,25 @@
 fileFormatVersion: 2
-guid: 74ca64bba7d68464baed1739d8424e31
+guid: b39d4ce31d7e666438a05e8e4366e1fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2550809968554234608
-    second: Character_run_cycle -Sheet_0
+      213: 1630988547058315581
+    second: idle_character-sheet_0
   - first:
-      213: 8544126187579118330
-    second: Character_run_cycle -Sheet_1
+      213: 6655040989766442398
+    second: idle_character-sheet_1
   - first:
-      213: 1581876253944551238
-    second: Character_run_cycle -Sheet_2
+      213: -2726135858318865497
+    second: idle_character-sheet_2
   - first:
-      213: 6079264433444046462
-    second: Character_run_cycle -Sheet_3
+      213: 7114344589361053667
+    second: idle_character-sheet_3
   - first:
-      213: 2251010199401543492
-    second: Character_run_cycle -Sheet_4
+      213: -2500695873908244963
+    second: idle_character-sheet_4
   - first:
-      213: 7980468247991545034
-    second: Character_run_cycle -Sheet_5
-  - first:
-      213: 1179338684384184429
-    second: Character_run_cycle -Sheet_6
-  - first:
-      213: -1479543439537828873
-    second: Character_run_cycle -Sheet_7
-  - first:
-      213: 8070252611438760880
-    second: Character_run_cycle -Sheet_8
-  - first:
-      213: -4942515219510789236
-    second: Character_run_cycle -Sheet_9
-  - first:
-      213: 6101919198057278122
-    second: Character_run_cycle -Sheet_10
+      213: 2688216775113498050
+    second: idle_character-sheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 11
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -148,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_run_cycle -Sheet_0
+      name: idle_character-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -162,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f25331d62c466320800000000000000
-      internalID: 2550809968554234608
+      spriteID: d313424317f62a610800000000000000
+      internalID: 1630988547058315581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_run_cycle -Sheet_1
+      name: idle_character-sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -183,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af214c6bf75d29670800000000000000
-      internalID: 8544126187579118330
+      spriteID: e9d51b035847b5c50800000000000000
+      internalID: 6655040989766442398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_run_cycle -Sheet_2
+      name: idle_character-sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -204,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6479df26214f3f510800000000000000
-      internalID: 1581876253944551238
+      spriteID: 7ab037b61e1da2ad0800000000000000
+      internalID: -2726135858318865497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_run_cycle -Sheet_3
+      name: idle_character-sheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -225,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e76491bfac2ed5450800000000000000
-      internalID: 6079264433444046462
+      spriteID: 3ef769ae5ba3bb260800000000000000
+      internalID: 7114344589361053667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_run_cycle -Sheet_4
+      name: idle_character-sheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -246,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4473c1999d13d3f10800000000000000
-      internalID: 2251010199401543492
+      spriteID: d1ef9681a5ebb4dd0800000000000000
+      internalID: -2500695873908244963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_run_cycle -Sheet_5
+      name: idle_character-sheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -267,113 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acce1d6d69150ce60800000000000000
-      internalID: 7980468247991545034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_run_cycle -Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d688898f84add5010800000000000000
-      internalID: 1179338684384184429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_run_cycle -Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fb8698a41b977be0800000000000000
-      internalID: -1479543439537828873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_run_cycle -Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b3d978fdfb4fff60800000000000000
-      internalID: 8070252611438760880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_run_cycle -Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8bf81c2898a86bb0800000000000000
-      internalID: -4942515219510789236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_run_cycle -Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aaa27586e2f5ea450800000000000000
-      internalID: 6101919198057278122
+      spriteID: 2cdd2e70ae67e4520800000000000000
+      internalID: 2688216775113498050
       vertices: []
       indices: 
       edges: []
