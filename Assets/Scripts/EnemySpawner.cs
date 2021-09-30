@@ -78,3 +78,4 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(EnemyLeft, new Vector2(-38.6f, 2.41f), Quaternion.identity);  
     }
 }
+

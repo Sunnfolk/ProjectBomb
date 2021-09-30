@@ -8,6 +8,7 @@ public class PlayerAnimations : MonoBehaviour
     private PlayerInput input;
     private TestPlayerMovement movement; // this needs to be changed when final product
     private Rigidbody2D rb2d;
+    private DashAbility dashability;
 
     private string action;
     
@@ -18,6 +19,7 @@ public class PlayerAnimations : MonoBehaviour
         input = GetComponent<PlayerInput>();
         movement = GetComponent<TestPlayerMovement>(); // this needs to be changed when final product
         rb2d = GetComponent<Rigidbody2D>();
+        dashability = GetComponent<DashAbility>();
     }
 
     
@@ -44,19 +46,19 @@ public class PlayerAnimations : MonoBehaviour
             }
             else
             {
-                if (rb2d.velocity.y > 0)
+                if (rb2d.velocity.y > 0 && dashability.dashState != DashState.Dashing)
                 {
                     animator.Play("Jump");
                 }
-                else
+                else if (rb2d.velocity.y > 0 && dashability.dashState != DashState.Dashing)
                 {
                     animator.Play("fall");
                 }
             }
 
-            if (expr)
+            if (dashability.dashState == DashState.Dashing)
             {
-                
+                animator.Play("dash");
             }
         }
 
