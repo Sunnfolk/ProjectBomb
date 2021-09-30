@@ -93,13 +93,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2909745827292636413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02584958, y: -1.0288877}
+  m_Offset: {x: 0.02584958, y: 0.0196383}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1374035, y: 11.768314}
+  m_Size: {x: 2.1374035, y: 4.428572}
   m_EdgeRadius: 0
 --- !u!114 &463975928
 MonoBehaviour:
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6efc4f394eea81e47afaf1134d082374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHit: 0
   enteredSafeArea: 0
   startEnemyHealth: 3
   currentEnemyHealth: 0
@@ -157,13 +158,13 @@ GameObject:
   - component: {fileID: 2909745827685684960}
   - component: {fileID: 2909745827685684961}
   - component: {fileID: 2909745827685684963}
-  - component: {fileID: 2909745827685684962}
   - component: {fileID: 590179354}
   - component: {fileID: 590179355}
   - component: {fileID: 590179347}
   - component: {fileID: 590179356}
   - component: {fileID: 4533587706222588712}
   - component: {fileID: 858406544}
+  - component: {fileID: 412370864463899649}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -180,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 2909745827685684972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.75, y: -3.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 2909745827292636412}
   m_Father: {fileID: 0}
@@ -295,34 +296,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &2909745827685684962
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2909745827685684972}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 4.8}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!70 &590179354
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -404,7 +379,7 @@ MonoBehaviour:
   walking: {fileID: 8300000, guid: b4c22addcf4fac045a3bb3f3c906f4ec, type: 3}
   punch: {fileID: 8300000, guid: 7cbfa1b3ecb84f249936d044efdcd324, type: 3}
   Dash: {fileID: 8300000, guid: df98fda49a246d84d9c07111e2b55d24, type: 3}
-  interact: {fileID: 0}
+  interact: {fileID: 8300000, guid: cffc6026ccb331d489ebfdec8e4f7da7, type: 3}
 --- !u!82 &858406544
 AudioSource:
   m_ObjectHideFlags: 0
@@ -501,3 +476,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &412370864463899649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909745827685684972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4bfb860ddee6be4cb5e34d79bc6ff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPosition: {x: 0, y: 0}
+  hasJustDied: 0

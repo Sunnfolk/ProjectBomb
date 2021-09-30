@@ -71,8 +71,7 @@ public class HitDetection : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy") && currentEnemyHealth == 0)
         {
-            //other.gameObject.m_EnemyAnimations.PlayDeath();
-            Destroy(other.gameObject); // add this function to the animation later when we have it
+            other.gameObject.GetComponent<EnemyAnimations>().PlayDeath();
             currentEnemyHealth = startEnemyHealth; // This might cause a but as it only resets when an enemy is destroyed, which might be a problem when hitting two enemies at the same time 
         }
 

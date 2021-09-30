@@ -22,8 +22,14 @@ public class EnemyAnimations : MonoBehaviour
     public void PlayDeath()
     {
         m_Animator.Play("EnemyDeath");
+        //Destroy(gameObject, m_Animator.GetCurrentAnimatorClipInfo(0).Length);
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 
 
-   
+
 }

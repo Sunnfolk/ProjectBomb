@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector] public bool longJump;
     [HideInInspector] public bool attack;
     [HideInInspector] public bool interact;
+    [HideInInspector] public bool resetPlayer;
 
     void Update()
     {
@@ -21,6 +22,8 @@ public class PlayerInput : MonoBehaviour
 
         attack = Keyboard.current.eKey.wasPressedThisFrame;
         interact = Keyboard.current.fKey.wasPressedThisFrame;
+
+        resetPlayer = Keyboard.current.enterKey.wasPressedThisFrame;
 
     }
 }

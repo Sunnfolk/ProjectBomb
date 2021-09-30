@@ -10,7 +10,7 @@ public class Bomb : MonoBehaviour
 
     private bool canInteract;
     private bool hasInteractedWithBomb;
-    private bool hasInteracted;
+    public bool hasInteracted;
     private bool bombCanExplode;
     [HideInInspector] public bool bombWasPlanted;
     [HideInInspector] public bool enemiesCanSpawn;
@@ -142,7 +142,7 @@ public class Bomb : MonoBehaviour
         if (explodeCurrentTimer <= 0 && !m_hitDetection.enteredSafeArea)
         {
             print("You have died");
-            SceneManager.LoadScene("GardTestScene"); // need to change the name of the scene when applying this script to different scene
+            SceneManager.LoadScene("GameOverMenu"); // need to change the name of the scene when applying this script to different scene
         }
     }
 
