@@ -151,7 +151,7 @@ public class Bomb : MonoBehaviour
         if (bombCurrentHealth <= 0)
         {
             print("you have failed");
-            SceneManager.LoadScene("GardTestScene");
+            SceneManager.LoadScene("GameOverMenu");
         }
     }
 

@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector] public bool attack;
     [HideInInspector] public bool interact;
     [HideInInspector] public bool resetPlayer;
+    [HideInInspector] public bool exitApplication;
+    
 
     void Update()
     {
@@ -20,10 +22,16 @@ public class PlayerInput : MonoBehaviour
         jump = Keyboard.current.spaceKey.wasPressedThisFrame;
         longJump = Keyboard.current.spaceKey.isPressed;
 
-        attack = Keyboard.current.eKey.wasPressedThisFrame;
+        attack = Mouse.current.leftButton.wasPressedThisFrame;
         interact = Keyboard.current.fKey.wasPressedThisFrame;
 
         resetPlayer = Keyboard.current.enterKey.wasPressedThisFrame;
 
+        exitApplication = Keyboard.current.escapeKey.wasPressedThisFrame;
+
+        if (exitApplication)
+        {
+            Application.Quit();
+        }
     }
 }

@@ -129,6 +129,7 @@ MonoBehaviour:
   longJump: 0
   attack: 0
   interact: 0
+  resetPlayer: 0
 --- !u!114 &463975929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +278,7 @@ MonoBehaviour:
   longJump: 0
   attack: 0
   interact: 0
+  resetPlayer: 0
 --- !u!50 &2909745827685684963
 Rigidbody2D:
   serializedVersion: 4
@@ -392,7 +394,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.487
+  m_Volume: 0.41
   m_Pitch: 1
   Loop: 0
   Mute: 0
