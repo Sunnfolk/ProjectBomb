@@ -130,6 +130,7 @@ MonoBehaviour:
   attack: 0
   interact: 0
   resetPlayer: 0
+  exitApplication: 0
 --- !u!114 &463975929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +280,7 @@ MonoBehaviour:
   attack: 0
   interact: 0
   resetPlayer: 0
+  exitApplication: 0
 --- !u!50 &2909745827685684963
 Rigidbody2D:
   serializedVersion: 4

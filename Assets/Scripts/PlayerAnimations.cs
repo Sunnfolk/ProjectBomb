@@ -28,7 +28,7 @@ public class PlayerAnimations : MonoBehaviour
         
         if (input.moveVector.x != 0)
         {
-            transform.localScale = new Vector2(input.moveVector.x, 1f); // this will flip the player sprite to have it face the direction it is running
+            transform.localScale = new Vector2(input.moveVector.x * 0.7f, 0.7f); // this will flip the player sprite to have it face the direction it is running
         }
 
         if (action != "attack")
