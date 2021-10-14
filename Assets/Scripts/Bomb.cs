@@ -8,8 +8,8 @@ using Random = Unity.Mathematics.Random;
 public class Bomb : MonoBehaviour
 {
 
-    private bool canInteract;
-    private bool hasInteractedWithBomb;
+    [HideInInspector] public bool canInteract;
+    [HideInInspector] public bool hasInteractedWithBomb;
     public bool hasInteracted;
     private bool bombCanExplode;
     [HideInInspector] public bool bombWasPlanted;
@@ -108,6 +108,7 @@ public class Bomb : MonoBehaviour
             print("you planted the bomb");
             this.spriteRenderer.enabled = true;
             bombWasPlanted = true;
+            
         }
     }
 
