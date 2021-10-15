@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using EZCameraShake;
 
 public class HitDetection : MonoBehaviour
 {
     private PlayerInput m_Input;
     private EnemyAnimations m_EnemyAnimations;
+    
 
     private bool canhit;
     [HideInInspector] public bool enemyHit;
@@ -66,6 +68,7 @@ public class HitDetection : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && enemyHit)
         {
             currentEnemyHealth = currentEnemyHealth - 1f;
+            CameraShaker.Instance.ShakeOnce(4f, 2f, 0.1f, 0.1f);
             enemyHit = false;
         }
 

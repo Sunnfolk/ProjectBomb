@@ -16,6 +16,10 @@ public class TextManager : MonoBehaviour
     private bool plantTextdone;
     private bool defendTextdone;
     private bool countdowndone;
+    private bool delayStart;
+
+    [SerializeField] private float delayTimerStart = 5f;
+    private float delayTimerCurrent;
     
     
     void Start()
@@ -24,26 +28,30 @@ public class TextManager : MonoBehaviour
         plantTextdone = false;
         defendTextdone = false;
         countdowndone = false;
+        delayStart = false;
+
+        delayTimerCurrent = delayTimerStart;
     }
 
     
     void Update()
     {
-        if (_input.interact && _Bomb.canInteract)
+        if (_input.interact && _Bomb.canInteract) // Plant bomb
         {
             plantText.GetComponent<SpriteRenderer>().enabled = false;
             plantTextdone = true;
         }
 
-        if (plantTextdone && _Bomb.enemiesCanSpawn)
+        if (plantTextdone && _Bomb.enemiesCanSpawn) // Defend bomb
         {
             defendText.GetComponent<SpriteRenderer>().enabled = true;
             plantTextdone = false;
             defendTextdone = true;
-            
+            delayStart = true;
+
         }
 
-        if (defendTextdone && _input.interact && _Bomb.hasInteractedWithBomb)
+        if (defendTextdone && _Bomb.enemiesCanSpawn == false && delayTimerCurrent <= 0f) // press f to start countdown
         {
             defendText.GetComponent<SpriteRenderer>().enabled = false;
             startCountdown.GetComponent<SpriteRenderer>().enabled = true;
@@ -51,11 +59,22 @@ public class TextManager : MonoBehaviour
             countdowndone = true;
         }
 
-        if (countdowndone)
+        if (countdowndone && _Bomb.hasInteractedWithBomb) // Escape before it explodes
         {
             startCountdown.GetComponent<SpriteRenderer>().enabled = false;
             escape.GetComponent<SpriteRenderer>().enabled = true;
         }
         
+        DelayCounter();
+        
     }
+
+    private void DelayCounter()
+    {
+        if (delayStart)
+        {
+            delayTimerCurrent -= Time.deltaTime;
+        }
+    }
+    
 }
