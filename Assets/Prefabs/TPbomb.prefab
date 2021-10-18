@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9014692486933951023}
   - component: {fileID: 9014692486933951056}
   - component: {fileID: 186763196}
+  - component: {fileID: 1124863505}
+  - component: {fileID: 1124863511}
   m_Layer: 0
   m_Name: TPbomb
   m_TagString: TPbomb
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 9014692486933951019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5044, y: -3.1241, z: 0}
-  m_LocalScale: {x: 2.4328878, y: 1.7241377, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.4528302, g: 0.032592982, b: 0.014524712, a: 1}
+  m_Sprite: {fileID: 399615709545564374, guid: fe598699942f0af48b803690eb61f5b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,18 +102,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021312714, y: 0.2556268}
+  m_Offset: {x: 0.03290689, y: -0.1283657}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.3333335, y: 5.3333335}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4475656, y: 1.5112536}
+  m_Size: {x: 3.2568257, y: 1.9281598}
   m_EdgeRadius: 0
 --- !u!114 &9014692486933951023
 MonoBehaviour:
@@ -126,14 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 0
+  hasInteractedWithBomb: 0
   hasInteracted: 0
   bombWasPlanted: 0
   enemiesCanSpawn: 0
   bombStartTimer: 5
   bombCurrentTimer: 0
-  explodeStartTimer: 10
+  explodeStartTimer: 5
   explodeCurrentTimer: 0
-  bombStartHealth: 3
+  bombStartHealth: 7
   bombCurrentHealth: 0
   spriteRenderer: {fileID: 0}
 --- !u!114 &9014692486933951056
@@ -167,7 +170,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d753b5f2acb86364d8e57da4319bb8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyLeft: {fileID: 0}
-  EnemyRight: {fileID: 0}
+  EnemyLeft: {fileID: 602853058084128031, guid: 2a005751ba68c354ea9ae0070c8d2393, type: 3}
+  EnemyRight: {fileID: 8783493659470772014, guid: 27077d792c2321041afede4b0cd84b08, type: 3}
   randomTimeRight: 0
   randomTimeLeft: 0
+--- !u!95 &1124863505
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014692486933951019}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd19cd63961420542a23a6f04093e837, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1124863511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014692486933951019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efc4f394eea81e47afaf1134d082374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHit: 0
+  enteredSafeArea: 0
+  startEnemyHealth: 3
+  currentEnemyHealth: 0

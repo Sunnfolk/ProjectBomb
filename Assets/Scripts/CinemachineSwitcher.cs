@@ -14,14 +14,15 @@ public class CinemachineSwitcher : MonoBehaviour
 
     private bool FollowCamera = true;
 
-
-    
-    
+    public Bomb _bomb;
     
     
     void Start()
     {
-        action.performed += _ => SwitchPriority();
+        {
+           action.performed += _ => SwitchPriority(); 
+        }
+        
     }
 
     private void SwitchPriority()
@@ -49,10 +50,5 @@ public class CinemachineSwitcher : MonoBehaviour
     {
         action.Disable();
     }
-
-
-    void Update()
-    {
-        
-    }
+    
 }

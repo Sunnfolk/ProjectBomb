@@ -27,7 +27,6 @@ public class Bomb : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     private HitDetection m_hitDetection;
     
-    
     void Start()
     {
         m_Input = GetComponent<PlayerInput>();
@@ -44,6 +43,7 @@ public class Bomb : MonoBehaviour
         bombCurrentTimer = bombStartTimer;
         explodeCurrentTimer = explodeStartTimer;
         bombCurrentHealth = bombStartHealth;
+        
     }
 
     
@@ -108,7 +108,6 @@ public class Bomb : MonoBehaviour
             print("you planted the bomb");
             this.spriteRenderer.enabled = true;
             bombWasPlanted = true;
-            
         }
     }
 
