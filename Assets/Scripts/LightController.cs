@@ -19,12 +19,11 @@ public class LightController : MonoBehaviour
     public GameObject Light9;
     public GameObject Wall;
 
-    public static bool canActivateLight = false;
+    public static bool canActivateLight;
     
     void Start()
-    {
-        
-    canActivateLight = false;
+    { 
+        canActivateLight = false;
         
       Light0.SetActive(false);   
       Light1.SetActive(false);

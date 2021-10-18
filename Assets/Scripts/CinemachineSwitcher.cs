@@ -15,11 +15,13 @@ public class CinemachineSwitcher : MonoBehaviour
     private bool FollowCamera = true;
     
 
-    public static bool canZoom = true;
+    public static bool canZoom;
     
     
     void Start()
     {
+        canZoom = true;
+        
         {
            action.performed += _ => SwitchPriority(); 
         }

@@ -11,6 +11,9 @@ public class PlayerAnimations : MonoBehaviour
     private DashAbility dashability;
 
     private string action;
+
+    public GameObject DashLight;
+    
     
     
     void Start()
@@ -20,6 +23,8 @@ public class PlayerAnimations : MonoBehaviour
         movement = GetComponent<TestPlayerMovement>(); // this needs to be changed when final product
         rb2d = GetComponent<Rigidbody2D>();
         dashability = GetComponent<DashAbility>();
+        
+        DashLight.SetActive(false);
     }
 
     
@@ -59,6 +64,11 @@ public class PlayerAnimations : MonoBehaviour
             if (dashability.dashState == DashState.Dashing)
             {
                 animator.Play("dash");
+                DashLight.SetActive(true);
+            }
+            else
+            {
+                DashLight.SetActive(false);
             }
         }
 
