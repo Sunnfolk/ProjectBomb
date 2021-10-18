@@ -124,7 +124,8 @@ public class Bomb : MonoBehaviour
     private void BombReady()
     {
         if (bombCurrentTimer <= 0)
-        {
+        { 
+            CinemachineSwitcher.canZoom = true;
            print("Bomb is ready. Press F to initiate detonation");
            enemiesCanSpawn = false;
            bombCanExplode = true;
@@ -137,6 +138,8 @@ public class Bomb : MonoBehaviour
         {
             explodeCurrentTimer -= Time.deltaTime;
             print("its going to explode");
+            CinemachineSwitcher.canZoom = false;
+            LightController.canActivateLight = true;
         }
 
         if (explodeCurrentTimer <= 0 && !m_hitDetection.enteredSafeArea)

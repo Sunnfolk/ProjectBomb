@@ -13,8 +13,9 @@ public class CinemachineSwitcher : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera combatCamera;
 
     private bool FollowCamera = true;
+    
 
-    public Bomb _bomb;
+    public static bool canZoom = true;
     
     
     void Start()
@@ -22,11 +23,11 @@ public class CinemachineSwitcher : MonoBehaviour
         {
            action.performed += _ => SwitchPriority(); 
         }
-        
     }
 
     private void SwitchPriority()
     {
+        if (!canZoom) return;
         if (FollowCamera)
         {
             followCamera.Priority = 0;
@@ -38,6 +39,9 @@ public class CinemachineSwitcher : MonoBehaviour
             combatCamera.Priority = 0;
         }
 
+        
+
+        canZoom = false;
         FollowCamera = !FollowCamera;
     }
 

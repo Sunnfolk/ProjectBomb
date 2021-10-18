@@ -69,13 +69,14 @@ public class HitDetection : MonoBehaviour
         {
             currentEnemyHealth = currentEnemyHealth - 1f;
             CameraShaker.Instance.ShakeOnce(4f, 2f, 0.1f, 0.1f);
+            PlayerParticles.CreatePunch();
             enemyHit = false;
         }
 
         if (other.gameObject.CompareTag("Enemy") && currentEnemyHealth == 0)
         {
             other.gameObject.GetComponent<EnemyAnimations>().PlayDeath();
-            currentEnemyHealth = startEnemyHealth; // This might cause a but as it only resets when an enemy is destroyed, which might be a problem when hitting two enemies at the same time 
+            currentEnemyHealth = startEnemyHealth; // This might cause a bug as it only resets when an enemy is destroyed, which might be a problem when hitting two enemies at the same time 
         }
 
         

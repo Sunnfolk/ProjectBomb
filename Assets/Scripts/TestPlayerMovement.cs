@@ -68,6 +68,7 @@ public class TestPlayerMovement : MonoBehaviour
          jumpTimeCounter = jumpTime;
          _Rigidbody2D.velocity = new Vector2(_Rigidbody2D.velocity.x, jumpForce);
          canCoyote = false;
+         PlayerParticles.CreateDust();
       }
       
    }
