@@ -151,6 +151,11 @@ public class Bomb : MonoBehaviour
 
     private void BombHealth()
     {
+        if (bombCurrentHealth == 1f)
+        {
+            PlayerParticles.CreateExplosion();
+        }
+        
         if (bombCurrentHealth <= 0)
         {
             print("you have failed");

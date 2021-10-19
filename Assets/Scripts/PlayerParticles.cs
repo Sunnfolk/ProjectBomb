@@ -14,12 +14,23 @@ public class PlayerParticles : MonoBehaviour
     public static ParticleSystem PunchParticles;
     public GameObject _PunchParticles;
     
+    public static ParticleSystem ExlosionParticles;
+    public GameObject _ExlosionParticles;
+    
+    public static ParticleSystem ExlosionParticles1;
+    public GameObject _ExlosionParticles1;
+    
+    public static ParticleSystem ExlosionParticles2;
+    public GameObject _ExlosionParticles2;
     
     void Start()
     {
         DustParticles = _DustParticles.GetComponent<ParticleSystem>();
         DashParticles = _DashParticles.GetComponent<ParticleSystem>();
         PunchParticles = _PunchParticles.GetComponent<ParticleSystem>();
+        ExlosionParticles = _ExlosionParticles.GetComponent<ParticleSystem>();
+        ExlosionParticles1 = _ExlosionParticles1.GetComponent<ParticleSystem>();
+        ExlosionParticles2 = _ExlosionParticles2.GetComponent<ParticleSystem>();
     }
 
     
@@ -38,5 +49,11 @@ public class PlayerParticles : MonoBehaviour
     {
         PunchParticles.Play();
     }
-    
+
+    public static void CreateExplosion()
+    {
+        ExlosionParticles.Play();
+        ExlosionParticles1.Play();
+        ExlosionParticles2.Play();
+    }
 }
