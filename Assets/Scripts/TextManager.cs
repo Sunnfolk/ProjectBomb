@@ -18,7 +18,7 @@ public class TextManager : MonoBehaviour
     private bool countdowndone;
     private bool delayStart;
 
-    [SerializeField] private float delayTimerStart = 5f;
+    [SerializeField] private float delayTimerStart = 50f;
     private float delayTimerCurrent;
     
     
