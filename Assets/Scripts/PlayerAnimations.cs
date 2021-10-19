@@ -11,6 +11,9 @@ public class PlayerAnimations : MonoBehaviour
     private DashAbility dashability;
 
     private string action;
+
+    public GameObject DashLight;
+    
     
     
     void Start()
@@ -20,6 +23,8 @@ public class PlayerAnimations : MonoBehaviour
         movement = GetComponent<TestPlayerMovement>(); // this needs to be changed when final product
         rb2d = GetComponent<Rigidbody2D>();
         dashability = GetComponent<DashAbility>();
+        
+        DashLight.SetActive(false);
     }
 
     
@@ -28,7 +33,7 @@ public class PlayerAnimations : MonoBehaviour
         
         if (input.moveVector.x != 0)
         {
-            transform.localScale = new Vector2(input.moveVector.x * 0.7f, 0.7f); // this will flip the player sprite to have it face the direction it is running
+            transform.localScale = new Vector2(input.moveVector.x, 1f); // this will flip the player sprite to have it face the direction it is running
         }
 
         if (action != "attack")
@@ -59,6 +64,11 @@ public class PlayerAnimations : MonoBehaviour
             if (dashability.dashState == DashState.Dashing)
             {
                 animator.Play("dash");
+                DashLight.SetActive(true);
+            }
+            else
+            {
+                DashLight.SetActive(false);
             }
         }
 
@@ -75,3 +85,6 @@ public class PlayerAnimations : MonoBehaviour
         action = str;
     }
 }
+
+
+

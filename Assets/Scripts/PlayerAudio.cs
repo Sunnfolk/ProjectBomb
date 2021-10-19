@@ -44,6 +44,7 @@ public class PlayerAudio : MonoBehaviour
     {
         audioSource.pitch = Random.Range(0.5f, 1.5f);
         audioSource.PlayOneShot(walking);
+        PlayerParticles.CreateDust();
     }
 
     private void LandingAudio()
@@ -53,6 +54,7 @@ public class PlayerAudio : MonoBehaviour
             audioSource.pitch = Random.Range(0.8f, 1.2f); // the random range gives you the possible to spesify a range like i did here
             audioSource.PlayOneShot(land);
             canland = false;
+            PlayerParticles.CreateDust();
         }
         else if (!playerMovement.IsGrounded())
         {
@@ -79,6 +81,7 @@ public class PlayerAudio : MonoBehaviour
     private void DashAudio()
     {
         audioSource.PlayOneShot(Dash);
+        PlayerParticles.CreateDash();
     }
 
     private void InteractAudio()
