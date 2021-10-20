@@ -76,6 +76,7 @@ public class TestPlayerMovement : MonoBehaviour
    private void FixedUpdate()
    {
       if (_dash.dashState == DashState.Dashing) return;
+      if (_Input.moveVector.x == 0 && !IsGrounded()) return;
       _Rigidbody2D.velocity = new Vector2(_Input.moveVector.x * moveSpeed, _Rigidbody2D.velocity.y);
    }
 

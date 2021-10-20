@@ -14,6 +14,7 @@ public class Bomb : MonoBehaviour
     private bool bombCanExplode;
     [HideInInspector] public bool bombWasPlanted;
     [HideInInspector] public bool enemiesCanSpawn;
+    private bool hasPlayedExplosion;
     
 
     [SerializeField] private float bombStartTimer = 5f;
@@ -22,23 +23,28 @@ public class Bomb : MonoBehaviour
     [SerializeField] public float explodeCurrentTimer;
     [SerializeField] private float bombStartHealth = 3f;
     [SerializeField] private float bombCurrentHealth;
+
+    public AudioClip bombExplosion;
     
     private PlayerInput m_Input;
     public SpriteRenderer spriteRenderer;
     private HitDetection m_hitDetection;
+    private AudioSource _AudioSource;
     
     void Start()
     {
         m_Input = GetComponent<PlayerInput>();
         m_hitDetection = GetComponent<HitDetection>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
+        _AudioSource = GetComponent<AudioSource>();
 
         canInteract = false;
         hasInteracted = false;
         bombWasPlanted = false;
         enemiesCanSpawn = false;
         bombCanExplode = false;
-        
+        hasPlayedExplosion = false;
+
 
         bombCurrentTimer = bombStartTimer;
         explodeCurrentTimer = explodeStartTimer;
@@ -68,6 +74,7 @@ public class Bomb : MonoBehaviour
         BombReady();
         BombExplosion();
         BombHealth();
+        DeathLoadLevel();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -142,25 +149,32 @@ public class Bomb : MonoBehaviour
             LightController.canActivateLight = true;
         }
 
-        if (explodeCurrentTimer <= 0 && !m_hitDetection.enteredSafeArea)
-        {
-            print("You have died");
-            SceneManager.LoadScene("GameOverMenu"); // need to change the name of the scene when applying this script to different scene
-        }
+       
     }
 
     private void BombHealth()
     {
-        if (bombCurrentHealth == 1f)
-        {
-            PlayerParticles.CreateExplosion();
-        }
-        
         if (bombCurrentHealth <= 0)
         {
-            print("you have failed");
             SceneManager.LoadScene("GameOverMenu");
         }
+        
+        if (explodeCurrentTimer <= 0 && !hasPlayedExplosion) 
+        {
+            _AudioSource.PlayOneShot(bombExplosion);
+            PlayerParticles.CreateExplosion();
+            hasPlayedExplosion = true;
+        }
+
     }
 
+    private void DeathLoadLevel()
+    {
+        if (explodeCurrentTimer < -1)
+        { 
+            SceneManager.LoadScene("GameOverMenu");
+        }
+        
+    }
+    
 }
