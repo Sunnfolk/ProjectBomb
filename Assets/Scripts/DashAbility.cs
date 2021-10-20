@@ -26,7 +26,8 @@ public class DashAbility : MonoBehaviour {
     void Update ()
     {
        
-        
+        print(dashState);
+        print("on ground?" + _move.IsGrounded());
         switch (dashState) 
         {
             case DashState.Ready:
@@ -44,7 +45,7 @@ public class DashAbility : MonoBehaviour {
                 if(dashTimer >= coolDown)
                 {
                     dashTimer = coolDown;
-                    _rigidBody2D.velocity = savedVelocity;
+                    //_rigidBody2D.velocity = savedVelocity;
                     dashState = DashState.Cooldown;
                 }
                 break;
@@ -58,7 +59,7 @@ public class DashAbility : MonoBehaviour {
                 break;
         }
 
-        if (_move.IsGrounded())
+        if (_move.IsGrounded() && dashTimer > 0)
         {
             dashTimer = 0;
             dashState = DashState.Cooldown;
