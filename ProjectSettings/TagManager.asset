@@ -8,6 +8,12 @@ TagManager:
   - Enemy
   - TPbomb
   - TPsafeArea
+  - ResetBorder
+  - CheckPoint_1
+  - CheckPoint
+  - finish
+  - finish1
+  - finish2
   layers:
   - Default
   - TransparentFX

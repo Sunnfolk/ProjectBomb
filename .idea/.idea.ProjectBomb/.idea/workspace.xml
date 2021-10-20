@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cbaa2a0d-62a2-4fcc-80f6-e71f2a7ddbdd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectBomb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectBomb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy(Left).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy(Left).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy(Right) Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy(Right) Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GardTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GardTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DashAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DashAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerAnimations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerAnimations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerParticles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerParticles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,18 +25,28 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/PlayerCollision.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/PlayerAudio.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/Backup/Unity-20210820T190437Z-001/Unity/Project Boost/Assets/Scripts/CollisionHandeler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAnimations.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CinemachineSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MusicController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/ResetPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Checkpoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraShake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Oscillator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/PlayerAnimations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bomb.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DashAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAudio.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/TheSunIsADeadlyLazer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Unity/Demon Breachers/Demon Breachers/Assets/Scripts/ResetPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Checkpoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerParticles.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yaJ4XyQsvA1klNGiFVvJQWzN4V" />
   <component name="ProjectViewState">
@@ -52,6 +61,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../RushB\Project Bomb.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\RushB" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -93,7 +110,14 @@
       <workItem from="1632837866943" duration="8272000" />
       <workItem from="1632848578040" duration="708000" />
       <workItem from="1632915772530" duration="1190000" />
-      <workItem from="1632919262153" duration="5446000" />
+      <workItem from="1632919262153" duration="29522000" />
+      <workItem from="1633077090645" duration="2187000" />
+      <workItem from="1634116296184" duration="1988000" />
+      <workItem from="1634199791296" duration="6986000" />
+      <workItem from="1634287319268" duration="12154000" />
+      <workItem from="1634543463033" duration="11740000" />
+      <workItem from="1634630692025" duration="1281000" />
+      <workItem from="1634635194056" duration="724000" />
     </task>
     <servers />
   </component>

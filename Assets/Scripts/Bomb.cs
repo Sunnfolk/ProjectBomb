@@ -8,11 +8,11 @@ using Random = Unity.Mathematics.Random;
 public class Bomb : MonoBehaviour
 {
 
-    private bool canInteract;
-    private bool hasInteractedWithBomb;
-    private bool hasInteracted;
-    private bool bombWasPlanted;
+    [HideInInspector] public bool canInteract;
+    [HideInInspector] public bool hasInteractedWithBomb;
+    public bool hasInteracted;
     private bool bombCanExplode;
+    [HideInInspector] public bool bombWasPlanted;
     [HideInInspector] public bool enemiesCanSpawn;
     
 
@@ -26,7 +26,6 @@ public class Bomb : MonoBehaviour
     private PlayerInput m_Input;
     public SpriteRenderer spriteRenderer;
     private HitDetection m_hitDetection;
-    
     
     void Start()
     {
@@ -44,6 +43,7 @@ public class Bomb : MonoBehaviour
         bombCurrentTimer = bombStartTimer;
         explodeCurrentTimer = explodeStartTimer;
         bombCurrentHealth = bombStartHealth;
+        
     }
 
     
@@ -124,7 +124,8 @@ public class Bomb : MonoBehaviour
     private void BombReady()
     {
         if (bombCurrentTimer <= 0)
-        {
+        { 
+            CinemachineSwitcher.canZoom = true;
            print("Bomb is ready. Press F to initiate detonation");
            enemiesCanSpawn = false;
            bombCanExplode = true;
@@ -137,21 +138,28 @@ public class Bomb : MonoBehaviour
         {
             explodeCurrentTimer -= Time.deltaTime;
             print("its going to explode");
+            CinemachineSwitcher.canZoom = false;
+            LightController.canActivateLight = true;
         }
 
         if (explodeCurrentTimer <= 0 && !m_hitDetection.enteredSafeArea)
         {
             print("You have died");
-            SceneManager.LoadScene("GardTestScene"); // need to change the name of the scene when applying this script to different scene
+            SceneManager.LoadScene("GameOverMenu"); // need to change the name of the scene when applying this script to different scene
         }
     }
 
     private void BombHealth()
     {
+        if (bombCurrentHealth == 1f)
+        {
+            PlayerParticles.CreateExplosion();
+        }
+        
         if (bombCurrentHealth <= 0)
         {
             print("you have failed");
-            SceneManager.LoadScene("GardTestScene");
+            SceneManager.LoadScene("GameOverMenu");
         }
     }
 

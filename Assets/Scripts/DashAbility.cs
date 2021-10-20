@@ -13,14 +13,14 @@ public class DashAbility : MonoBehaviour {
     private PlayerInput _input;
     public float DashSpeed = 3f;
     public Vector2 savedVelocity;
-    
+        
     
     private void Start()
     {
         _rigidBody2D = GetComponent<Rigidbody2D>();
         _move = GetComponent<TestPlayerMovement>();
         _input = GetComponent<PlayerInput>();
-        
+
     }
 
     void Update ()
